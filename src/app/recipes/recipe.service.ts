@@ -11,7 +11,7 @@ export class RecipeService {
     new RecipeModel(
       'test name',
       'this is simply a test',
-      'http://i529.photobucket.com/albums/dd336/jacksampath/work.jpg',
+      'https://www.gstatic.com/webp/gallery3/1.sm.png',
       [
         new IngredientModel('cherry', 3),
         new IngredientModel('banana', 3)
@@ -19,7 +19,7 @@ export class RecipeService {
     new RecipeModel(
       'test name',
       'this is a test',
-      'http://i529.photobucket.com/albums/dd336/jacksampath/work.jpg',
+      'https://www.gstatic.com/webp/gallery3/3.sm.png',
       [
         new IngredientModel('egg', 2),
         new IngredientModel('meat', 0)
@@ -27,7 +27,7 @@ export class RecipeService {
     new RecipeModel(
       'test name',
       'this',
-      'https://miro.medium.com/fit/c/240/240/1*-SEJXCDJisHCnMhMEZe3ug.png',
+      'https://www.gstatic.com/webp/gallery3/2.sm.png',
       [
         new IngredientModel('chicken', 2),
         new IngredientModel('potato', 2)
@@ -39,6 +39,9 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
   addIngredientsToShoppingList(ingredients: IngredientModel[]) {
     this.shoppingListService.addIngredients(ingredients);
