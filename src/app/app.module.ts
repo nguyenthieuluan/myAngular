@@ -14,6 +14,10 @@ import {ShoppingListService} from './shopping-list/shopping-list.service';
 import {AppRoutingModule} from './app-routing.module';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
+import {FormsModule} from '@angular/forms';
+import { LuanComponent } from './Test/luan.component';
+import {ServerService} from './service/server.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,13 +31,16 @@ import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.compon
     ShoppingEditComponent,
     DropdownDirective,
     RecipesStartComponent,
-    RecipesEditComponent
+    RecipesEditComponent,
+    LuanComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

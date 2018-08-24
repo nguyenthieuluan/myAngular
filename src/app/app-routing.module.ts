@@ -5,6 +5,7 @@ import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {RecipesStartComponent} from './recipes/recipes-start/recipes-start.component';
 import {RecipeDetailComponent} from './recipes/recipe-detail/recipe-detail.component';
 import {RecipesEditComponent} from './recipes/recipes-edit/recipes-edit.component';
+import {LuanComponent} from './Test/luan.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'recipes', pathMatch: 'full'},
@@ -14,7 +15,9 @@ const appRoutes: Routes = [
       { path: ':id', component: RecipeDetailComponent },
       { path: ':id/edit', component: RecipesEditComponent }
     ] },
-  { path: 'shopping-list', component: ShoppingListComponent }
+  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'luan', component: LuanComponent },
+  { path: '**', component: LuanComponent },
 ];
 
 
