@@ -14,10 +14,22 @@ import {ShoppingListService} from './shopping-list/shopping-list.service';
 import {AppRoutingModule} from './app-routing.module';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LuanComponent } from './Test/luan.component';
 import {ServerService} from './service/server.service';
 import {HttpClientModule} from '@angular/common/http';
+import {DevComponent} from './dev/dev.component';
+import {DevExtremeModule, DxButtonModule} from 'devextreme-angular';
+import {AngularFireModule} from 'angularfire2';
+
+import { environment } from '../environments/environment';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import {AuthService} from './auth/auth.service';
+import {AuthGuard} from './auth/auth.guard';
+import {RecipeService} from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -33,14 +45,23 @@ import {HttpClientModule} from '@angular/common/http';
     RecipesStartComponent,
     RecipesEditComponent,
     LuanComponent,
+    DevComponent,
+    UserProfileComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    DevExtremeModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    DxButtonModule,
+    AngularFireModule.initializeApp(environment.firebase, 'myAngular'),
+    AngularFireAuthModule,
   ],
-  providers: [ShoppingListService, ServerService],
+  providers: [ShoppingListService, ServerService, AuthService, RecipeService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

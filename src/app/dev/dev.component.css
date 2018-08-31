@@ -1,0 +1,86 @@
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-fieldset {
+  width: 420px;
+  margin: 30px auto;
+}
+
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-fieldset:first-child {
+  margin-top: 120px;
+}
+
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-fieldset-header {
+  font-size: 16px;
+}
+
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-field {
+  display: inline-block;
+  width: 24%;
+}
+
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-field-value:not(.dx-widget) > .dx-button {
+  float: none;
+}
+
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-field-value:not(.dx-switch):not(.dx-checkbox):not(.dx-button),
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-field-label {
+  float: none;
+  width: 100%;
+}
+
+::ng-deep .dx-viewport:not(.dx-theme-ios7) .dx-field-label {
+  padding-left: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif;
+}
+.demo-container {
+  width: 400px;
+}
+.demo-container > .dx-widget {
+  margin-bottom: 20px;
+  -display: block;
+}
+.float-right {
+  float: right;
+}
+.full-width {
+  width: 100%;
+  display: block;
+}
+.scroll-view-height {
+  height: 200px;
+  display: block;
+}
+.resizable {
+  display: block;
+  background-color: #ccc;
+}
+.tab-content {
+  text-align: justify;
+  margin-top: 25px;
+}
+#tabs {
+  margin-top: 60px;
+}
+.tabpanel-item {
+  height: 200px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 25px;
+  padding-top: 55px;
+  display: block;
+}
+.tabpanel-item  > div {
+  float: left;
+  padding: 0 85px 10px 10px
+}
+.tabpanel-item  p {
+  font-size: 16px;
+}
+.form-group {
+  margin-bottom: 10px;
+}

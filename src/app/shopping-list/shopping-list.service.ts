@@ -1,6 +1,6 @@
 import {IngredientModel} from '../shared/ingredient.model';
 import { Subject } from 'rxjs';
-// noinspection TypeScriptCheckImport
+
 
 export class ShoppingListService {
   ingredientsChanged = new Subject<IngredientModel[]>();
@@ -23,6 +23,14 @@ export class ShoppingListService {
   }
   addIngredients( ingredients: IngredientModel[] ) {
     this.ingredients.push(...ingredients);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+  updateIngredient (index: number, newIngredient: IngredientModel) {
+    this.ingredients[index] = newIngredient;
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 }
