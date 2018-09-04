@@ -30,6 +30,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
 import {RecipeService} from './recipes/recipe.service';
+import {DataStorageService} from './shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import {RecipeService} from './recipes/recipe.service';
     AngularFireModule.initializeApp(environment.firebase, 'myAngular'),
     AngularFireAuthModule,
   ],
-  providers: [ShoppingListService, ServerService, AuthService, RecipeService, AuthGuard],
+  providers: [ShoppingListService, ServerService, AuthService, RecipeService, AuthGuard, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

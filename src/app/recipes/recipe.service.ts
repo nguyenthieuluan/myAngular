@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {IngredientModel} from '../shared/ingredient.model';
 import {ShoppingListService} from '../shopping-list/shopping-list.service';
 import {Subject} from 'rxjs/Subject';
+import {RecipeListComponent} from './recipe-list/recipe-list.component';
 
 @Injectable()
 export class RecipeService {
@@ -59,6 +60,9 @@ export class RecipeService {
     this.recipes.splice(index, 1);
     this.recipesChange.next(this.recipes.slice());
   }
-
+  setRecipes(recipes: RecipeModel[]) {
+    this.recipes = recipes;
+    this.recipesChange.next(this.recipes.slice());
+  }
 
 }
