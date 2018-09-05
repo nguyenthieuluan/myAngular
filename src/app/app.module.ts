@@ -31,6 +31,7 @@ import {AuthService} from './auth/auth.service';
 import {AuthGuard} from './auth/auth.guard';
 import {RecipeService} from './recipes/recipe.service';
 import {DataStorageService} from './shared/data-storage.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {DataStorageService} from './shared/data-storage.service';
     DxButtonModule,
     AngularFireModule.initializeApp(environment.firebase, 'myAngular'),
     AngularFireAuthModule,
+    BrowserAnimationsModule
   ],
   providers: [ShoppingListService, ServerService, AuthService, RecipeService, AuthGuard, DataStorageService],
   bootstrap: [AppComponent]
