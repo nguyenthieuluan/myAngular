@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" #serverName />
+      <button class="btn btn-danger p-1" (click)="onAddServer(serverName.value)">Add Server</button>
+      <hr>
+      <button class="btn btn-primary p-1" (click)="onSave()">Save Server</button>
+      <button class="btn btn-primary p-1" (click)="onGet()">Get Server</button>
+      <hr>
+      <ul class="list-group" *ngFor="let server of servers">
+        <li class="list-group-item">{{server.name}} ({{server.id}})</li>
+      </ul>
+    </div>
+  </div>
+</div>
