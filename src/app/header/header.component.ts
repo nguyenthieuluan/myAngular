@@ -17,19 +17,30 @@ export class HeaderComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService, private authService: AuthService) { }
 
   ngOnInit() {
-  }
+  };
 
   onSave() {
      this.dataStorageService.storeRecipes().subscribe(
        (response: Response) => console.log(response)
      );
-  }
+  };
+
   onFetch() {
     this.dataStorageService.getRecipes();
-  }
+  };
+  
   onLogout() {
     this.authService.logout();
-  }
+  };
+  
+  onSwichEng() {
+    alert('eng');;
+  };
+  
+  onSwichJap() {
+    alert('ja');
+  };
+
 
 
 }
