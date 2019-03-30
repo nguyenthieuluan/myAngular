@@ -18,11 +18,18 @@
         </ng-template>
         <li *ngIf="authService.isAuthenticated()"><a class="cur-p" (click)="onLogout()">Logout</a></li>
         <li class="dropdown" appDropdown *ngIf="authService.isAuthenticated()">
-        <a class="dropdown-toggle cur-p" role="button">Manage <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a class="cur-p" (click)="onSave()">Save Data</a></li>
-          <li><a class="cur-p" (click)="onFetch()">Fetch Data</a></li>
-        </ul>
+          <a class="dropdown-toggle cur-p" role="button">Manage<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="cur-p" (click)="onSave()">Save Data</a></li>
+            <li><a class="cur-p" (click)="onFetch()">Fetch Data</a></li>
+          </ul>
+        </li>
+        <li class="dropdown" appDropdown>
+          <a class="dropdown-toggle cur-p" role="button">Language<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="cur-p" (click)="onSwichEng()">Eng</a></li>
+            <li><a class="cur-p" (click)="onSwichJap()">Jap</a></li>
+          </ul>
         </li>
       </ul>
     </div>
