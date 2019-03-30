@@ -1,0 +1,15 @@
+{
+  "HOME": {
+    "TITLE": "Recipe Book",
+    "SELECT": "Change language",
+    "RECIPES": "RCIPES",
+    "SHOPPINGLIST": "SHOPPINGLIST",
+    "LUAN":  "LUAN"
+  },
+
+  "RECIPE": {
+    "PLEASE_SECLECT_YOUR_RECIPES": "please seclect your recipes"
+  }
+
+
+}

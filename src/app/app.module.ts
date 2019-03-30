@@ -17,7 +17,7 @@ import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.compon
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LuanComponent } from './Test/luan.component';
 import {ServerService} from './service/server.service';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {DevComponent} from './dev/dev.component';
 import {DevExtremeModule, DxButtonModule} from 'devextreme-angular';
 import {AngularFireModule} from 'angularfire2';
@@ -32,6 +32,14 @@ import {AuthGuard} from './auth/auth.guard';
 import {RecipeService} from './recipes/recipe.service';
 import {DataStorageService} from './shared/data-storage.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+  // return new TranslateHttpLoader(http, "/public/lang-files/", "-lang.json");
+}
 
 @NgModule({
   declarations: [
@@ -62,7 +70,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     DxButtonModule,
     AngularFireModule.initializeApp(environment.firebase, 'myAngular'),
     AngularFireAuthModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [ShoppingListService, ServerService, AuthService, RecipeService, AuthGuard, DataStorageService],
   bootstrap: [AppComponent]
