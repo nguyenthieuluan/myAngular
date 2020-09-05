@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+public
+.firebaserc
+package-lock.json
+.firebase/hosting.cHVibGlj.cache
+.gitignore
